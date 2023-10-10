@@ -442,7 +442,7 @@ namespace Pipedrive
                 _lastApiInfo = response.ApiInfo.Clone();
             }
 
-            HandleErrors(response);
+            HandleErrors(response, request);
             return response;
         }
 
@@ -459,18 +459,22 @@ namespace Pipedrive
                 { HttpStatusCode.NoContent, response => new NoContentException(response) }
             };
 
-        static void HandleErrors(IResponse response)
+        static void HandleErrors(IResponse response, IRequest request)
         {
             Func<IResponse, Exception> exceptionFunc;
             if (_httpExceptionMap.TryGetValue(response.StatusCode, out exceptionFunc))
             {
-                throw exceptionFunc(response);
+                var ex = exceptionFunc(response);
+                ex.Data.Add("request", request);
+                throw ex;
             }
 
             // Pipedrive uses 410 (Gone) for successful delete
             if ((int)response.StatusCode >= 400 && (int)response.StatusCode != 410)
             {
-                throw new ApiException(response);
+                var ex = new ApiException(response);
+                ex.Data.Add("request", request);
+                throw ex;
             }
         }
 

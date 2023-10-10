@@ -103,9 +103,18 @@ namespace Pipedrive
         /// Returns the <see cref="Uri"/> that receives a new messages for the channel with given id.
         /// </summary>
         /// <param name="id">The id of the channel</param>
-        public static Uri ChannelMessageReceive(string channelId)
+        public static Uri Channel()
         {
-            return new Uri($"{_channelsUrl}/{channelId}/messages/receieve", UriKind.Relative);
+            return new Uri($"{_channelsUrl}", UriKind.Relative);
+        }
+
+        /// <summary>
+        /// Returns the <see cref="Uri"/> that receives a new messages for the channel with given id.
+        /// </summary>
+        /// <param name="id">The id of the channel</param>
+        public static Uri ChannelMessageReceive()
+        {
+            return new Uri($"{_channelsUrl}/messages/receive", UriKind.Relative);
         }
 
         /// <summary>
