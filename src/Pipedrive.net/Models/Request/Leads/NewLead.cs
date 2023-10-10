@@ -30,7 +30,7 @@ namespace Pipedrive
 
         [JsonProperty("visible_to")]
 
-        public string VisibleTo { get; set; } = ((int)Visibility.shared).ToString();
+        public string VisibleTo { get; set; } = ((int)Visibility.entireCompany).ToString();
 
         [JsonProperty("was_seen")]
         public bool WasSeen { get; set; }

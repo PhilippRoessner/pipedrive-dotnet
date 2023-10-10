@@ -32,7 +32,7 @@ namespace Pipedrive
         public DateTime? ExpectedCloseDate { get; set; }
 
         [JsonProperty("visible_to")]
-        public Visibility VisibleTo { get; set; } = Visibility.shared;
+        public Visibility VisibleTo { get; set; } = Visibility.entireCompany;
 
         [JsonProperty("was_seen")]
         public bool WasSeen { get; set; }
