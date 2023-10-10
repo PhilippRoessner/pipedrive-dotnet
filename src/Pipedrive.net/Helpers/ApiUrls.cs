@@ -13,6 +13,8 @@ namespace Pipedrive
 
         static readonly Uri _activityTypesUrl = new Uri("activityTypes", UriKind.Relative);
 
+        static readonly Uri _channelsUrl = new Uri("channels", UriKind.Relative);
+
         static readonly Uri _currenciesUrl = new Uri("currencies", UriKind.Relative);
 
         static readonly Uri _dealsUrl = new Uri("deals", UriKind.Relative);
@@ -95,6 +97,15 @@ namespace Pipedrive
         public static Uri ActivityType(long id)
         {
             return new Uri($"{_activityTypesUrl}/{id}", UriKind.Relative);
+        }
+
+        /// <summary>
+        /// Returns the <see cref="Uri"/> that receives a new messages for the channel with given id.
+        /// </summary>
+        /// <param name="id">The id of the channel</param>
+        public static Uri ChannelMessageReceive(string channelId)
+        {
+            return new Uri($"{_channelsUrl}/{channelId}/messages/receieve", UriKind.Relative);
         }
 
         /// <summary>
