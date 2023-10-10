@@ -53,6 +53,7 @@ namespace Pipedrive
             Activity = new ActivitiesClient(apiConnection);
             ActivityField = new ActivityFieldsClient(apiConnection);
             ActivityType = new ActivityTypesClient(apiConnection);
+            Channel = new ChannelsClient(apiConnection);
             Currency = new CurrenciesClient(apiConnection);
             Deal = new DealsClient(apiConnection);
             DealField = new DealFieldsClient(apiConnection);
@@ -158,6 +159,14 @@ namespace Pipedrive
         /// Refer to the API documentation for more information: https://developers.pipedrive.com/docs/api/v1/#!/ActivityTypes
         /// </remarks>
         public IActivityTypesClient ActivityType { get; private set; }
+
+        /// <summary>
+        /// Access Pipedrive's Channel API (Messaging).
+        /// </summary>
+        /// <remarks>
+        /// Refer to the API documentation for more information: https://developers.pipedrive.com/docs/api/v1/Channels
+        /// </remarks>
+        public IChannelsClient Channel { get; private set; }
 
         /// <summary>
         /// Access Pipedrive's Currency API.

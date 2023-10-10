@@ -7,7 +7,7 @@ using Pipedrive.Helpers;
 namespace Pipedrive
 {
     /// <summary>
-    /// A client for Pipedrive's User API.
+    /// A client for Pipedrive's Channels API.
     /// </summary>
     /// <remarks>
     /// See the <a href="https://developers.pipedrive.com/docs/api/v1/Channels">User API documentation</a> for more information.
@@ -21,11 +21,11 @@ namespace Pipedrive
         {
         }
 
-        public Task<Channel> UpsertMessage(NewChannelMessage data, string channelId)
+        public Task<ChannelMessage> UpsertMessage(ChannelMessage data, string channelId)
         {
             Ensure.ArgumentNotNull(data, nameof(data));
 
-            return ApiConnection.Post<Channel>(ApiUrls.ChannelMessageReceive(channelId), data);
+            return ApiConnection.Post<ChannelMessage>(ApiUrls.ChannelMessageReceive(channelId), data);
         }
     }
 }

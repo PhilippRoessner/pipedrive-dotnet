@@ -5,7 +5,7 @@ using Pipedrive.Converters;
 
 namespace Pipedrive
 {
-    public class NewChannelMessage
+    public class ChannelMessage
     {
         [JsonProperty("id")]
         public string Id { get; set; }
@@ -26,7 +26,7 @@ namespace Pipedrive
         public string Status { get; set; }
 
         [JsonProperty("created_at")]
-        public string CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
 
         [JsonProperty("reply_by")]
         public string ReplyBy { get; set; }
@@ -35,9 +35,9 @@ namespace Pipedrive
         public string ConversationLink { get; set; }
 
         [JsonProperty("attachments")]
-        public IEnumerable<NewChannelMessageAttachment> Attachments { get; set; }
+        public IEnumerable<ChannelMessageAttachment> Attachments { get; set; }
 
-        public NewChannelMessage(string id, string channelId, string senderId, string conversationId, string message, string status, string createdAt, string replyBy, string conversationLink, IEnumerable<NewChannelMessageAttachment> attachments)
+        public ChannelMessage(string id, string channelId, string senderId, string conversationId, string message, string status, DateTime createdAt, string replyBy, string conversationLink, IEnumerable<ChannelMessageAttachment> attachments)
         {
             Id = id;
             ChannelId = channelId;

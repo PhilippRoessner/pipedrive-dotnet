@@ -5,7 +5,7 @@ using Pipedrive.Converters;
 
 namespace Pipedrive
 {
-    public class NewChannelMessageAttachment
+    public class ChannelMessageAttachment
     {
         [JsonProperty("id")]
         public string Id { get; set; }
@@ -28,7 +28,7 @@ namespace Pipedrive
         [JsonProperty("link_expires")]
         public bool LinkExpires { get; set; }
 
-        public NewChannelMessageAttachment(string id, string type, string name, long size, string url, string previewUrl, bool linkExpires)
+        public ChannelMessageAttachment(string id, string type, string name, long size, string url, string previewUrl, bool linkExpires)
         {
             Id = id;
             Type = type;

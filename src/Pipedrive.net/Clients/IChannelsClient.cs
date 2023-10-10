@@ -4,6 +4,6 @@ namespace Pipedrive
 {
     public interface IChannelsClient
     {
-        Task<Channel> UpsertMessage(NewChannelMessage data, string channelId);
+        Task<ChannelMessage> UpsertMessage(ChannelMessage data, string channelId);
     }
 }
