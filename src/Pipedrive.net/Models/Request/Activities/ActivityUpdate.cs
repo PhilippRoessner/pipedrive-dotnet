@@ -29,6 +29,9 @@ namespace Pipedrive
         [JsonProperty("user_id")]
         public long? UserId { get; set; }
 
+        [JsonProperty("lead_id")]
+        public Guid? LeadId { get; set; }
+
         [JsonProperty("deal_id")]
         public long? DealId { get; set; }
 

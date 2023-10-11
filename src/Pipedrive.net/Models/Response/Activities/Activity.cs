@@ -18,6 +18,7 @@
                 Participants = Participants,
                 OrgId = OrgId,
                 Note = Note,
+                LeadId = LeadId,
             };
         }
     }

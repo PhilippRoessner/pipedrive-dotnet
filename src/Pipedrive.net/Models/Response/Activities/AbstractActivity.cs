@@ -29,6 +29,9 @@ namespace Pipedrive
         [JsonProperty("due_date")]
         public DateTime? DueDate { get; set; }
 
+        [JsonProperty("lead_id")]
+        public Guid? LeadId { get; set; }
+
         [JsonProperty("due_time")]
         public string DueTime { get; set; }
 
